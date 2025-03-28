@@ -1,5 +1,4 @@
-#include <cstdio>
-#include <string>
+#include "../includes/common_include.hpp"
 
 using namespace std;
 
