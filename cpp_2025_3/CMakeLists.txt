@@ -29,7 +29,13 @@ add_executable(m1w3d2 src/m1w3d2_dynamic_memory.cpp)
 add_executable(m1w3d3 src/m1w3d3_reference_vs_pointer.cpp)
 add_executable(m1w3d4 src/m1w3d4_smart_pointers.cpp)
 add_executable(m1w4d1 src/m1w4d1_stl.cpp)
+add_executable(m2w1d1 src/m2w1d1_template.cpp)
+add_executable(m2w1d2 src/m2w1d2_excpt.cpp)
+
 
 target_link_libraries(m1w3d3 cpp_lib)
 target_link_libraries(m1w3d4 cpp_lib)
 target_link_libraries(m1w4d1 cpp_lib)
+target_link_libraries(m2w1d1 cpp_lib)
+find_package(Threads REQUIRED)
+target_link_libraries(m2w1d2 PRIVATE Threads::Threads cpp_lib)
