@@ -28,6 +28,8 @@ add_executable(m1w3d1 src/m1w3d1_array.cpp)
 add_executable(m1w3d2 src/m1w3d2_dynamic_memory.cpp)
 add_executable(m1w3d3 src/m1w3d3_reference_vs_pointer.cpp)
 add_executable(m1w3d4 src/m1w3d4_smart_pointers.cpp)
+add_executable(m1w4d1 src/m1w4d1_stl.cpp)
 
 target_link_libraries(m1w3d3 cpp_lib)
 target_link_libraries(m1w3d4 cpp_lib)
+target_link_libraries(m1w4d1 cpp_lib)
