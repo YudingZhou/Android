@@ -1,0 +1,5 @@
+service m2d1d3 /system/bin/m2d1d3.bin
+    class core
+    user system
+    group system
+    oneshot

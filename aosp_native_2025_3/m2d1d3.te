@@ -1,0 +1,19 @@
+type m2d1d3_exec, exec_type, file_type, system_file_type;
+type m2d1d3_service, service_manager_type;
+
+init_daemon_domain(m2d1d3_service)
+
+allow m2d1d3_service self:process { getattr sigchld signal };
+allow m2d1d3_service self:capability { sys_resource };
+allow m2d1d3_service self:process setrlimit;
+
+allow m2d1d3_service system_server:binder call;
+allow m2d1d3_service logd:sock_file write;
+allow m2d1d3_service logd:unix_stream_socket connectto;
+allow m2d1d3_service system_file:file execute;
+
+allow init m2d1d3_exec:file execute;
+
+//next
+// open //system/sepolicy/private/file_contexts
+// add /system/bin/m2d1d3_exec u:object_r:m2d1d3_exec:s0 

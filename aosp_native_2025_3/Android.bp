@@ -1,0 +1,15 @@
+cc_library{
+    name: "libm2w1d3",
+    srcs: ["src/m2w1d3_helloworld_lib.cpp"],
+    shared_libs: ["liblog"],
+    include_dirs: [],
+    cflags: ["-Wall", "-Werror"]
+}
+
+cc_binary{
+    name: "m2w1d3.bin",
+    srcs: ["src/m2w1d3_helloworld_main.cpp"],
+    shared_libs:["libm2w1d3", "liblog"],
+    init_rc : ["m2w1d3.rc"],
+    cflags: ["-Wall", "-Werror"]
+}
