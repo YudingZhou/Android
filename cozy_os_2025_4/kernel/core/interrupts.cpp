@@ -17,3 +17,5 @@ void enable_interrupts() {
 void disable_interrupts() {
     // Disable interrupts in the CPU
 }
+
+void interrupts_init(){}

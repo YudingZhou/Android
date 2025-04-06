@@ -10,3 +10,7 @@ void deallocate_memory(void* ptr) {
     // Implement memory deallocation logic here
     // This is a placeholder for the actual implementation
 }
+
+void memory_init(){
+    
+}

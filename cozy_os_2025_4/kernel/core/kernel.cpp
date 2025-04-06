@@ -2,9 +2,9 @@
 
 void kernel_init() {
     // Initialize the kernel components
-    memory_init();
-    process_init();
-    interrupts_init();
+    // memory_init();
+    // process_init();
+    // interrupts_init();
 }
 
 void kernel_main() {

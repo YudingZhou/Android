@@ -22,7 +22,7 @@ set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/linker/linker.ld)
 
 # Add source files
 set(BOOT_SOURCES
-    boot/bootloader.asm
+    #boot/bootloader.asm  for bootloaders than GRUB
     boot/multiboot_header.asm
 )
 
@@ -61,9 +61,19 @@ add_library(kernel_objects OBJECT ${KERNEL_SOURCES})
 #add_library(utils_objects OBJECT ${UTILS_SOURCES})
 
 # Link everything into the final binary
+
+message("BOOT_OBJECTS: ${BOOT_OBJECTS}")
+message("CMAKE_BINARY_DIR: ${CMAKE_BINARY_DIR}")
+message("TARGET_OBJECTS:KERNEL_OBJECT: $<TARGET_OBJECTS:kernel_objects> ")
+
+get_target_property(KERNEL_OBJECTS_FILES kernel_objects OBJECTS)
+message("kernel objects file ${KERNEL_OBJECTS_FILES}")
 add_custom_target(cozy_os.bin ALL
-    DEPENDS kernel_objects libc_objects utils_objects ${BOOT_OBJECTS}
-    COMMAND ld -m elf_i386 -T ${LINKER_SCRIPT} -o ${CMAKE_BINARY_DIR}/cozy_os.bin ${BOOT_OBJECTS} $<TARGET_OBJECTS:kernel_objects> 
+    DEPENDS kernel_objects  ${BOOT_OBJECTS} #libc_objects utils_objects
+
+    COMMAND ld -m elf_i386 -T ${LINKER_SCRIPT} -o ${CMAKE_BINARY_DIR}/cozy_os.bin ${BOOT_OBJECTS} 
+    
+    $<TARGET_OBJECTS:kernel_objects>  
     #$<TARGET_OBJECTS:libc_objects> $<TARGET_OBJECTS:utils_objects>
 )
 
