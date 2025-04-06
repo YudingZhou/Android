@@ -52,3 +52,25 @@ Contributions are welcome! Please feel free to submit issues or pull requests to
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Troubleshooting
+1. qemu-system-x86_64: symbol lookup error: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined symbol: __libc_pthread_init, version GLIBC_PRIVATE
+- this happens when launching qemu from vs terminal. solution is to launch from system terminal
+
+
+2. ydzhou@iPotato:~/lab/android/cozy_os_2025_4/build$ make
+[ 85%] Built target kernel_objects
+ld: warning: /home/ydzhou/lab/android/cozy_os_2025_4/build/multiboot_header.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+ld: warning: /home/ydzhou/lab/android/cozy_os_2025_4/build/cozy_os.bin has a LOAD segment with RWX permissions
+/bin/sh: 1: /home/ydzhou/lab/android/cozy_os_2025_4/build/CMakeFiles/kernel_objects.dir/kernel/core/memory.cpp.o: Permission denied
+/bin/sh: 1: /home/ydzhou/lab/android/cozy_os_2025_4/build/CMakeFiles/kernel_objects.dir/kernel/core/process.cpp.o: Permission denied
+/bin/sh: 1: /home/ydzhou/lab/android/cozy_os_2025_4/build/CMakeFiles/kernel_objects.dir/kernel/core/interrupts.cpp.o: Permission denied
+/bin/sh: 1: /home/ydzhou/lab/android/cozy_os_2025_4/build/CMakeFiles/kernel_objects.dir/kernel/drivers/keyboard.cpp.o: Permission denied
+/bin/sh: 1: /home/ydzhou/lab/android/cozy_os_2025_4/build/CMakeFiles/kernel_objects.dir/kernel/drivers/screen.cpp.o: Permission denied
+make[2]: *** [CMakeFiles/cozy_os.bin.dir/build.make:70: CMakeFiles/cozy_os.bin] Error 126
+make[1]: *** [CMakeFiles/Makefile2:112: CMakeFiles/cozy_os.bin.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2
+ydzhou@iPotato:~/lab/android/cozy_os_2025_4/build$ ls
+
+- not RCA. workaround is not compiling other module from other source file, all files are in kernel.cpp. so there is one kernel object that needs to be linked with boot header. 
