@@ -15,3 +15,6 @@ yz@iMaple Downloads %
 
 To work this around, one has to download older version emulator from google's website. I got an emulator for Android 12. And launched AVD from command line without error.
 
+download older version 
+yz@iMaple emulator 2 % ./emulator -avd Android12Emulator
+
