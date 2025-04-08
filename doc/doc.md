@@ -17,4 +17,22 @@ To work this around, one has to download older version emulator from google's we
 
 download older version 
 yz@iMaple emulator 2 % ./emulator -avd Android12Emulator
+2. troubleshooting - aosp building failure, cannot mount a directory on ubuntu 24
+
+E][2025-04-07T21:44:24-0400][1] initCloneNs():379 mount('/', '/', NULL, MS_REC|MS_PRIVATE, NULL): Pe
+rmission denied
+[F][2025-04-07T21:44:24-0400][1] runChild():469 Launching child process failed
+[W][2025-04-07T21:44:24-0400][1476214] runChild():489 Received error message from the child process b
+efore it has been executed
+[E][2025-04-07T21:44:24-0400][1476214] standaloneMode():272 Couldn't launch the child process
+21:44:25 ninja failed with: exit status 1
+
+it relates to ubuntu 24 selinux rule
+
+workaround
+https://github.com/google/nsjail/issues/236
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_unconfined=0
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+
 
