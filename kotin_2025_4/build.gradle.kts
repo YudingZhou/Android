@@ -17,6 +17,9 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3") // Replace with the latest version
+// For Android UI support:
+//    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3") // Replace with the latest version
 }
 
 tasks.test {
