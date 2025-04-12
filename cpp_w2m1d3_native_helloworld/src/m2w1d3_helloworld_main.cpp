@@ -5,7 +5,7 @@
 extern "C" void m2w1d3_hello_world();
 
 int main(){
-    ALOGI("Yuding calling extern m2w1d3_hello_world()");
+    ALOGI("m2w1d3 main()");
     m2w1d3_hello_world();
     pid_t pid = getpid();
     ALOGI("yuding native hello world, pid : %d", pid);
