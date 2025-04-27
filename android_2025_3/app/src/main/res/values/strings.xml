@@ -43,10 +43,10 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
 
-    <string name="onboard_page_1_title">Onboarding page title 1</string>
-    <string name="onboard_page_2_title">Onboarding page title 2</string>
-    <string name="onboard_page_3_title">Onboarding page title 3</string>
-    <string name="onboard_page_1_description">onboarding description 1</string>
-    <string name="onboard_page_2_description">description 2\n</string>
-    <string name="onboard_page_3_description">description 3\n</string>
+    <string name="onboard_page_1_title">Swipe and match</string>
+    <string name="onboard_page_2_title">Talk and Connect</string>
+    <string name="onboard_page_3_title">Go on a date</string>
+    <string name="onboard_page_1_description">swipe left and right get a match</string>
+    <string name="onboard_page_2_description">have a video or voice talk and have some human connection</string>
+    <string name="onboard_page_3_description">Set up a in-person date calendar</string>
 </resources>

@@ -31,7 +31,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import yuding.android.R
@@ -155,37 +157,41 @@ fun Onboard(onBoardingViewModel: OnBoardingViewModel) {
             }
         }
     }, content = {
-        Column(
-            modifier = Modifier
-                .padding(it)
-                .background(randomColor()),
-            horizontalAlignment = Alignment.Start,
-            verticalArrangement = Arrangement.Center
+        HorizontalPager(
+            contentPadding = it,
+            state = pageState,
+            modifier = Modifier.background(randomColor()),
+            verticalAlignment = Alignment.Top
         ) {
-            HorizontalPager(state = pageState) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Spacer(modifier = Modifier.size(50.dp))
 
                 val currentImageId = currentPage.image
                 val currentDescription = currentPage.description
                 Log.d(TAG, "current image id:$currentImageId, description:$currentDescription")
-                Image(painter = painterResource(id = R.drawable.ic_launcher_background), contentDescription = currentDescription)
-//            AsyncImage(
-//                model = ImageRequest.Builder(LocalContext.current).data(currentDescription).build(),
-//                contentDescription = currentDescription
-//            )
-//            Spacer(modifier = Modifier.size(50.dp))
+                Image(
+                    painter = painterResource(id = currentImageId),
+                    contentDescription = currentDescription,
+//                    contentScale = ContentScale.FillWidth,
+                    modifier = Modifier.fillMaxWidth()
+                )
+
+                Spacer(modifier = Modifier.height(10.dp))
+
                 Text(
                     text = pages[pageState.currentPage].description,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+
 //                    .padding(25.dp, 0.dp),
 //                fontSize = 16.sp,
-//                textAlign = TextAlign.Center,
+                    textAlign = TextAlign.Center,
 //                style = MaterialTheme.typography.bodySmall,
 //                color = MaterialTheme.colorScheme.onSurface
                 )
-
             }
         }
+
+
     })
 }
 

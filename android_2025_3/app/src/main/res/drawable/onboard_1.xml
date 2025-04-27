@@ -1,4 +1,11 @@
-<?xml version="1.0" standalone="no"?>
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <path fill="#FF0066" d="M61.3,-23.7C68.5,2.3,55.9,31,34,46.9C12.1,62.8,-19.1,66.1,-35.2,53.3C-51.2,40.5,-52.1,11.6,-43.7,-16C-35.3,-43.6,-17.6,-70.1,4.7,-71.6C27,-73.1,54.1,-49.7,61.3,-23.7Z" transform="translate(100 100)" />
-</svg>
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="480dp"
+    android:height="480dp"
+    android:viewportWidth="480"
+    android:viewportHeight="480">
+
+  <path
+      android:fillColor="#e647ff"
+      android:pathData="M450,290.5Q433,341,402.5,386.5Q372,432,317,427Q262,422,221,410Q180,398,125,394.5Q70,391,72,336Q74,281,56.5,235.5Q39,190,53,138.5Q67,87,113.5,58.5Q160,30,211.5,39Q263,48,299.5,74.5Q336,101,365,130Q394,159,430.5,199.5Q467,240,450,290.5Z" />
+</vector>
